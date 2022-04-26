@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Square from "./Square";
 
 export default function Board(props) {
@@ -11,8 +10,10 @@ export default function Board(props) {
                     return (
                         <Square
                             key={index}
-                            blockType={el}
+                            id={index}
+                            blockType={el.type}
                             handleClickBomb={handleClickBomb}
+                            smallSquare={smallSquare}
                         />
                     );
                 });
