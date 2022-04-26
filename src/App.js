@@ -34,8 +34,8 @@ function App() {
 
     const createSquare = (sizeBoard) => {
         if (sizeBoard === "SMALL") {
-            let square = Array(80).fill({ type: "-", id: "1" });
-            let bomb = Array(20).fill("*");
+            let square = Array(80).fill({ typeSquare: "-", id: "1" });
+            let bomb = Array(20).fill({ typeSquare: "*", id: "1" });
             let shuffleSquare = shuffle([...square, ...bomb]);
             let allsquare = [];
             let count = 0;
@@ -47,6 +47,7 @@ function App() {
                 }
                 allsquare.push(tmp);
             }
+            console.log(allsquare);
             let final = squareToNumber(allsquare);
             setSmallSquare(final);
         }
@@ -55,10 +56,10 @@ function App() {
     const squareToNumber = (arraySquare) => {
         const tmp = arraySquare.map((ele, row) => {
             return ele.map((ele, column) => {
-                if (ele.type === "-") {
+                if (ele.typeSquare === "-") {
                     return countBomb(row, column, arraySquare);
                 } else {
-                    return "*";
+                    return { typeSquare: "*", id: "1" };
                 }
             });
         });

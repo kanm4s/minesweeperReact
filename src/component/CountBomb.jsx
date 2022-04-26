@@ -1,6 +1,6 @@
 export default function countBomb(row, column, arraySquare) {
     let count = 0;
-    let cloned = { ...arraySquare[row][column] };
+    console.log(arraySquare[0][0].typeSquare);
     if (
         row >= 0 &&
         row <= arraySquare.length &&
@@ -100,6 +100,8 @@ export default function countBomb(row, column, arraySquare) {
             }
         }
     }
-    cloned.type = count;
-    return cloned;
+
+    // let cloned = { ...arraySquare[row][column], typeSquare: count };
+    // return { ...cloned };
+    return 1;
 }

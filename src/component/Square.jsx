@@ -23,7 +23,6 @@ export default function Square(props) {
                 console.log(ele);
             });
         });
-        console.log(idx);
     }
 
     return (

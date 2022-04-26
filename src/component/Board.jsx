@@ -11,7 +11,7 @@ export default function Board(props) {
                         <Square
                             key={index}
                             id={index}
-                            blockType={el.type}
+                            blockType={el.typeSquare}
                             handleClickBomb={handleClickBomb}
                             smallSquare={smallSquare}
                         />
